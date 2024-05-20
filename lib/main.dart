@@ -18,15 +18,39 @@ class App extends StatelessWidget {
     // Scaffold가 없으면 0,0부터 그림을 그림
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 10,
-          title: Text('Hello flutter!'),
-        ),
-        body: Center(
-          child: Text('Hello world!'),
-        ),
-      ),
+          backgroundColor: Color(0xFF181818),
+          body: Column(
+            children: [
+              SizedBox(
+                height: 90,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Hey, Sellina',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      Text(
+                        'Welcome back',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.8),
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          )),
     );
   }
 }
