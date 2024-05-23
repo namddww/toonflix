@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+// dart컴파일러가 컴파일하면 두 변수를 위한 메모리 공간을 만드는 대신
+const taxAmount = 15;
+const priceAmount = 15;
+
+var finalPrice = 46;
+
 class Player {
   String name;
   Player({required this.name});
@@ -18,8 +24,13 @@ class App extends StatelessWidget {
     // Scaffold가 없으면 0,0부터 그림을 그림
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Color(0xFF181818),
-          body: Column(
+        backgroundColor: Color(0xFF181818),
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 40,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 90,
@@ -28,7 +39,8 @@ class App extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment:
+                        CrossAxisAlignment.end, //컬럼은 가로방향, 로우는 세로방향
                     children: [
                       Text(
                         'Hey, Sellina',
@@ -41,16 +53,64 @@ class App extends StatelessWidget {
                       Text(
                         'Welcome back',
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
+                          color: Color.fromRGBO(255, 255, 255, 0.8),
                           fontSize: 18,
                         ),
                       ),
                     ],
                   )
                 ],
+              ),
+              SizedBox(
+                height: 120,
+              ),
+              Text(
+                'Total Balance',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white.withOpacity(0.8),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '\$5 194 482',
+                style: TextStyle(
+                  fontSize: 44,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(45),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 50,
+                      ),
+                      child: Text(
+                        'Transfer',
+                        style: TextStyle(
+                          fontSize: 22,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
