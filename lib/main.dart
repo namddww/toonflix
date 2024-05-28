@@ -13,29 +13,31 @@ class Player {
 
 void main() {
   var nico = Player(name: 'potato');
-  runApp(App());
+  runApp(const App());
 }
 
 // MaterialApp 은 안드로이드 스타일, CupertinoApp 은 ios 스타일, 구글이 만들었으므로 MaterialApp가 더 자연스러움
 class App extends StatelessWidget {
+  const App({super.key});
+
   //StatelessWidget 는 그림만 그려주는 위젯
   @override
   Widget build(BuildContext context) {
     // Scaffold가 없으면 0,0부터 그림을 그림
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFF181818),
+        backgroundColor: const Color(0xFF181818),
         body: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 40,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 90,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
@@ -61,7 +63,7 @@ class App extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 120,
               ),
               Text(
@@ -71,10 +73,10 @@ class App extends StatelessWidget {
                   color: Colors.white.withOpacity(0.8),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 '\$5 194 482',
                 style: TextStyle(
                   fontSize: 44,
@@ -82,7 +84,7 @@ class App extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -92,7 +94,7 @@ class App extends StatelessWidget {
                       color: Colors.amber,
                       borderRadius: BorderRadius.circular(45),
                     ),
-                    child: Padding(
+                    child: const Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: 15,
                         horizontal: 50,
